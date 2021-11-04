@@ -56,21 +56,20 @@ function renderUserCards() {
     const userTableBody = userTableContainer.querySelector("tbody");
     const userItems = users.map(users => {
          return `<tr>
-                    <td>${users.first_name}</td>
-                    <td>${users.last_name}</td>
                     <td><img alt ="${users.first_name}" src="${users.avatar}"></td>
+                    <td>${users.first_name} ${users.last_name}</td>
                     <td><button id = "deleteUser">Delete</button></td>
                     <td><button id = "extraInfo">Info</button></td>
                 </tr>
     `})
     const deleteUserButton = document.querySelector("#deleteUser");
     function deleteUserOnClick(event) {
-      const deleteUserButton = document.querySelector("#deleteUser");
       if(userItems) {
         userItems.remove();
       }
       console.log(event);
     }
+    // deleteUserButton.addEventListener('click', deleteUserOnClick);
     console.log(userItems);
     userTableBody.innerHTML = userItems.join('');
 }
