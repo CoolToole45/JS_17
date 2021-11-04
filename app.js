@@ -58,10 +58,29 @@ function renderUserCards() {
          return `<tr>
                     <td><img alt ="${users.first_name}" src="${users.avatar}"></td>
                     <td>${users.first_name} ${users.last_name}</td>
-                    <td><button id = "deleteUser">Delete</button></td>
+                    <td><button onclick="deleteUser()" id = "deleteUser">Delete</button></td>
                     <td><button id = "extraInfo">Info</button></td>
                 </tr>
     `})
+
+
+    // function deleteUser() {
+    //   const userTableBody = userTableContainer.querySelector("tbody");
+    //   const deleteUserButton = document.getElementById("#deleteUser");
+    //   const displaySetting = userTableBody.style.display;
+    //   if(displaySetting == 'block') {
+    //     userTableBody.style.display = "none";
+    //     deleteUserButton.innerHTML = "Show";
+    //   }else {
+    //     userTableBody.style.display = "block";
+    //     deleteUserButton.innerHTML = "Delete";
+    //   }
+    // }
+
+    // deleteUser();
+
+
+
     // const deleteUserButton = document.querySelector("#deleteUser");
     // function deleteUserOnClick(event) {
     //   if(userItems) {
@@ -70,6 +89,8 @@ function renderUserCards() {
     //   console.log(event);
     // }
     // deleteUserButton.addEventListener('click', deleteUserOnClick);
+
+
 
     // const extraInfoButton = document.querySelector("#extraInfo");
     // function showEmail(event) {
@@ -88,6 +109,8 @@ function renderUserCards() {
 renderUserCards();
 
 
+////////////////////////////////////////////////////////////////////////////////
+// თეიბლის გარეშე:
 
 // function renderUserCards() {
 //     const userBlockContainer = document.querySelector("#userList");
