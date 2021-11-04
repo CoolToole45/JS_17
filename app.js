@@ -49,7 +49,7 @@ const users = [
       avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg",
       email: "John.Doe@gmail.com"
     }
-  ];
+];
 
 function renderUserCards() {
     const userTableContainer = document.querySelector("#user-list");
@@ -58,55 +58,69 @@ function renderUserCards() {
          return `<tr>
                     <td><img alt ="${users.first_name}" src="${users.avatar}"></td>
                     <td>${users.first_name} ${users.last_name}</td>
-                    <td><button onclick="deleteUser()" id = "deleteUser">Delete</button></td>
+                    <td><button class = "removeUser">Delete</button></td>
                     <td><button id = "extraInfo">Info</button></td>
                 </tr>
     `})
-
-
-    // function deleteUser() {
-    //   const userTableBody = userTableContainer.querySelector("tbody");
-    //   const deleteUserButton = document.getElementById("#deleteUser");
-    //   const displaySetting = userTableBody.style.display;
-    //   if(displaySetting == 'block') {
-    //     userTableBody.style.display = "none";
-    //     deleteUserButton.innerHTML = "Show";
-    //   }else {
-    //     userTableBody.style.display = "block";
-    //     deleteUserButton.innerHTML = "Delete";
-    //   }
-    // }
-
-    // deleteUser();
-
-
-
-    // const deleteUserButton = document.querySelector("#deleteUser");
-    // function deleteUserOnClick(event) {
-    //   if(userItems) {
-    //     userItems.remove();
-    //   }
-    //   console.log(event);
-    // }
-    // deleteUserButton.addEventListener('click', deleteUserOnClick);
-
-
-
-    // const extraInfoButton = document.querySelector("#extraInfo");
-    // function showEmail(event) {
-    //   const userEmail = document.createElement('td');
-    //   const userEmailContent = document.createTextNode("${users.email}");
-    //   console.log(event);
-    //   console.log(userEmail);
-    // }
-
-    // extraInfoButton.addEventListener('click', showEmail());
-
-    console.log(userItems);
-    userTableBody.innerHTML = userItems.join('');
+  console.log(userItems);
+  userTableBody.innerHTML = userItems.join('');
 }
 
 renderUserCards();
+
+const removeBtn = document.querySelectorAll('.removeUser');
+removeBtn.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const tr = e.target.parentNode.parentNode;
+        tr.remove();
+    })
+})
+
+
+
+
+
+
+
+
+
+// function deleteUser() {
+//   const userTableBody = userTableContainer.querySelector("tbody");
+//   const deleteUserButton = document.getElementById("#deleteUser");
+//   const displaySetting = userTableBody.style.display;
+//   if(displaySetting == 'block') {
+//     userTableBody.style.display = "none";
+//     deleteUserButton.innerHTML = "Show";
+//   }else {
+//     userTableBody.style.display = "block";
+//     deleteUserButton.innerHTML = "Delete";
+//   }
+// }
+// deleteUser();
+
+// const deleteUserButton = document.querySelector("#deleteUser");
+// function deleteUserOnClick(event) {
+//   if(userItems) {
+//     userItems.remove();
+//   }
+//   console.log(event);
+// }
+
+// deleteUserButton.addEventListener('click', deleteUserOnClick);
+
+
+// const extraInfoButton = document.querySelector("#extraInfo");
+// function showEmail(event) {
+//   const userEmail = document.createElement('td');
+//   const userEmailContent = document.createTextNode("${users.email}");
+//   console.log(event);
+//   console.log(userEmail);
+// }
+
+// extraInfoButton.addEventListener('click', showEmail());
+ 
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
