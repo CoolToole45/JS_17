@@ -57,9 +57,10 @@ function renderUserCards() {
     const userItems = users.map(users => {
          return `<tr>
                     <td><img alt ="${users.first_name}" src="${users.avatar}"></td>
-                    <td>${users.first_name} ${users.last_name}</td>
+                    <td>${users.first_name}</td>
+                    <td>${users.last_name}</td>
                     <td><button class = "removeUser">Delete</button></td>
-                    <td><button id = "extraInfo">Info</button></td>
+                    <td><button class = "extraInfo">Info</button></td>
                 </tr>
     `})
   console.log(userItems);
@@ -76,8 +77,13 @@ removeBtn.forEach(btn => {
     })
 })
 
-
-
+const addEmail = document.querySelectorAll('.extraInfo');
+addEmail.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const tr = e.target.parentNode.parentNode;
+        tr.append(users[0].email);
+    })
+})
 
 
 
