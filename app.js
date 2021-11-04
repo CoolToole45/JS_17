@@ -62,14 +62,25 @@ function renderUserCards() {
                     <td><button id = "extraInfo">Info</button></td>
                 </tr>
     `})
-    const deleteUserButton = document.querySelector("#deleteUser");
-    function deleteUserOnClick(event) {
-      if(userItems) {
-        userItems.remove();
-      }
-      console.log(event);
-    }
+    // const deleteUserButton = document.querySelector("#deleteUser");
+    // function deleteUserOnClick(event) {
+    //   if(userItems) {
+    //     userItems.remove();
+    //   }
+    //   console.log(event);
+    // }
     // deleteUserButton.addEventListener('click', deleteUserOnClick);
+
+    // const extraInfoButton = document.querySelector("#extraInfo");
+    // function showEmail(event) {
+    //   const userEmail = document.createElement('td');
+    //   const userEmailContent = document.createTextNode("${users.email}");
+    //   console.log(event);
+    //   console.log(userEmail);
+    // }
+
+    // extraInfoButton.addEventListener('click', showEmail());
+
     console.log(userItems);
     userTableBody.innerHTML = userItems.join('');
 }
